@@ -1,3 +1,4 @@
 module.exports = {
-	MongoURI: "mongodb://127.0.0.1:27017/shopApp"
+	MongoURI: "mongodb+srv://saraswatmonika55:ecommerceShoppingApp@cluster0.llxzo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+    
 }
