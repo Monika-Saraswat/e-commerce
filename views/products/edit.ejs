@@ -1,0 +1,55 @@
+
+<%layout('layouts/boilerplate')%>
+<%- include('../partials/navbar')%>
+
+<div class="row mt-4">
+    <div class="col-lg-6 mx-auto" >
+        <form method="POST" action="/products/<%=foundProduct._id%>?_method=PATCH" class="needs-validation" novalidate>
+            <div class="mb-3">
+                <label for="name">Name : </label>
+                <input type="text" class="form-control" name="name" id="name" placeholder="Name of the Product" value="<%=foundProduct.name%>" required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+                <div class="invalid-feedback">
+                  Please enter valid entity.
+                </div>
+             </div>
+             <div class="mb-3">
+                <label for="img">Image : </label>
+                <input type="text" class="form-control" name="img" id="img" placeholder="Image of the Product" value="<%=foundProduct.img%>" required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+                <div class="invalid-feedback">
+                  Please enter valid entity.
+                </div>
+             </div>
+             <div class="mb-3">
+                <label for="price">Price : </label>
+                <!-- name should be same as of schema -->
+                <input type="number" class="form-control" name="price" id="price" placeholder="Price of the Product" value="<%=foundProduct.price%>" required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+                <div class="invalid-feedback">
+                  Please enter valid entity.
+                </div>
+             </div>
+             <div class="mb-3">
+                <label for="desc">Description : </label>
+                <textarea name="desc" id="desc" placeholder="" rows="5" ><%=foundProduct.desc%></textarea>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+                <div class="invalid-feedback">
+                  Please enter valid entity.
+                </div>
+             </div>
+             <button type="submit" class="btn btn-success">Edit Product</button>
+          </form>
+    </div>
+</div>
+<%- include('../partials/footer') %>
+</body>
+</html>

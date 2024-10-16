@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-basket-fill" viewBox="0 0 16 16">
+          <path d="M5.071 1.243a.5.5 0 0 1 .858.514L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 6h1.717zM3.5 10.5a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0z"/>
+        </svg>
+        <a class="navbar-brand mx-4" href="#">Shopping App</a>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/products">Home</a>
+          </li>
+          <%if(currentUser && currentUser.role==='seller'){%>
+            <li class="nav-item">
+              <a class="nav-link" href="/product/new">New</a>
+            </li>
+          <%}%>
+          
+        </ul>
+        <form class="d-flex" role="search">
+          <%if(!currentUser){%>
+         <a href="/login" class="nav-link mx-2">Login</a>
+         <%}else{%>
+          <a>Hello , <%=currentUser.username%></a>
+         <a href="/user/cart" class="nav-link mx-2"><i class="fa-solid fa-cart-shopping"></i>
+          <sup><span class="badge badge-danger"><%=currentUser.cart.length%></span></sup></a>
+         <a href="/logout" class="nav-link mx-2">Logout</a>
+         <%}%>
+        </form>
+      </div>
+    </div>
+  </nav>

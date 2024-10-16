@@ -1,0 +1,34 @@
+
+<%layout('layouts/boilerplate')%>
+<%- include('../partials/navbar')%>
+<%- include('../partials/flash')%>
+
+<div class="row">
+    <%for (let item of products){%>
+        <div class="col-lg-4 mt-4">
+        <div class="card mx-auto shadow position-relative" style="width: 18rem;">
+            <img src="<%=item.img%>" class="card-img-top" alt="...">
+            <span class="badge rounded-pill bg-light text-dark w-25 position-absolute translate-middle-y" style="top:41%;left:5%"><%=item.avgRating%>  &star; | <%=item.reviews.length%></span>
+            <div class="card-body">
+              <h3 class="card-title"><%=item.name%></h3>
+              <h5 class="card-text"><%=item.price%></h5>
+              <p class="card-text"><%=item.desc%></p>
+              <% if(item.reviews.length){ %>
+                <p class="text-muted"><%=item.reviews.length%> reviews</p>
+              <%}else{%>
+                <p class="text-muted">No reviews</p>
+              <% } %> 
+              <a href="/products/<%=item._id%>" class="btn btn-primary info">View Product</a>
+              <%if(currentUser && currentUser.role==='seller'){%>
+              <form action="/products/<%=item._id%>?_method=DELETE" method="POST" class="d-inline-block">
+                <button type="submit" class="btn btn-danger">Delete</button>
+                <%}%>
+              </form>
+            </div>
+          </div>
+        </div>
+    <%}%>
+</div>
+<%- include('../partials/footer') %>
+</body>
+</html>
