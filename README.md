@@ -2,7 +2,7 @@
 <h2>E-Commerce Website</h2>
 <p>A full-stack e-commerce platform that provides a seamless shopping experience for users. Built with Node.js, Express, MongoDB, and EJS, this platform allows sellers to manage their products and buyers to browse, add to cart, and manage their orders..</p>
 <h2>Live Demo</h2>
-<p>You can explore the application <a href="https://e-commerce-gly1.onrender.com/" target="_blank">here</a>.</p>
+<p>You can explore the application <a href="https://e-commerce-1-18l4.onrender.com/" target="_blank">here</a>.</p>
 <h2>🗣Features</h2>
     <ul>
         <li><strong>Authentication & Authorization: </strong>
@@ -54,7 +54,7 @@ cd e-commerce</code></pre>
         <pre><code>npm start</code></pre>
     </ol>
     <h2>Demo</h2>
-    <p>You can access the live version of the website <a href="https://e-commerce-gly1.onrender.com/" target="_blank">here</a>.</p>
+    <p>You can access the live version of the website <a href="https://e-commerce-1-18l4.onrender.com/" target="_blank">here</a>.</p>
     <h2>Folder Structure</h2>
     <pre><code>
 ├── public               # Static files (CSS, JS, images)
